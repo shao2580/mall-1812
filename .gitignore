@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
 /storage/*.key
+.env
+.idea
+.vscode
 .env.backup
 .env
 .idea
