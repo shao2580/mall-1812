@@ -15,13 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*后台*/
-Route::prefix('/admin')->group(function(){
-    Route::any('index','Admin\IndexController@index');		//首页
-    Route::any('index_v1','Admin\IndexController@indexV1'); //首页图
+
+
+// 练习
+Route::prefix('/exercise')->group(function(){
+    Route::any('login','ExerciseController@login');    
+    Route::any('a','ExerciseController@a');    
 });
-
-
-
-
-
