@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
+
 /*后台*/
 Route::prefix('/admin')->middleware([])->group(function(){
     Route::any('index','Admin\IndexController@index');		//首页
@@ -58,13 +58,6 @@ Route::prefix('index')->group(function(){
 }); 
 
 
-
-
-
-
-
-
-=======
 //登录页面
 Route::prefix('/index')->group(function(){
     route::any('login','Index\LoginController@login');//登录页面
@@ -96,4 +89,4 @@ Route::prefix('/index')->group(function(){
     route::any('center','Index\CenterController@center');//我的信息
     route::any('order','Index\CenterController@order');//我的订单
 });
->>>>>>> zt-dev
+
