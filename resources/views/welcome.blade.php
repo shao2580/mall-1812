@@ -81,7 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
+<<<<<<< HEAD
                     Laravel
+=======
+                    Laravel 
+>>>>>>> de16a1b94e547f46be5f0d40e358b82d313de58c
                 </div>
 
                 <div class="links">

@@ -4,6 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
@@ -16,5 +18,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+>>>>>>> 6e9bcca26831adfff0550be5deb47311ccf55e35
   </component>
 </module>
