@@ -1,5 +1,8 @@
-yyk
-<!DOCTYPE html>
+ yyk
+
+<!-- <?php phpinfo(); ?> -->
+
+ <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -82,7 +85,7 @@ yyk
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel 你回家没
                 </div>
 
                 <div class="links">
