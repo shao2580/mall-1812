@@ -1,5 +1,4 @@
-<?php phpinfo(); ?>
-
+yyk
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
