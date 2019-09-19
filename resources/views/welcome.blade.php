@@ -83,11 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-<<<<<<< HEAD
-                    Laravel 你回家没
-=======
-                    Laravel老田
->>>>>>> zzl-dev
+                    Laravel 老田你也就到这了！！！
                 </div>
 
                 <div class="links">
