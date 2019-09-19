@@ -2,6 +2,9 @@
 /public/hot
 /storage/*.key
 .env.backup
+.env
+.idea
+.vscode
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

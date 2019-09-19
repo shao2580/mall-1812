@@ -1,13 +1,9 @@
- yyk
 
-<!-- <?php phpinfo(); ?> -->
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -85,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel 你回家没
+                    Laravel今天好开心
                 </div>
 
                 <div class="links">
