@@ -15,11 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-
-=======
 // 练习
 Route::prefix('/exercise')->group(function(){
     Route::any('login','ExerciseController@login');    
+    Route::any('a','ExerciseController@a');    
 });
->>>>>>> origin/develop
