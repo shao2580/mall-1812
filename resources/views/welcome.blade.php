@@ -85,7 +85,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel 老田你也就到这了！！！
+                    Laravel 
                 </div>
 
                 <div class="links">
