@@ -24,8 +24,8 @@ Route::prefix('/admin')->middleware([])->group(function(){
     Route::any('add','Admin\IndexController@add');          //管理员添加
 });
 
-Route::prefix('/user')->middleware([])->group(function(){
-    Route::any('list','Admin\UserController@userList');     //会员列表
+Route::prefix('/vip')->middleware([])->group(function(){
+    Route::any('vlist','Admin\UserController@vlist');     //会员列表
 });
 
 Route::prefix('/login')->group(function(){
