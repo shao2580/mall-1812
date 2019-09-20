@@ -35,11 +35,41 @@ Route::prefix('/login')->group(function(){
     Route::any('loginout','Admin\LoginController@loginOut');   //退出登录
 });
 
+/*前台*/
+Route::prefix('index')->group(function(){    
+    //不用登陆
+    Route::namespace('Index')->group(function(){  
+        Route::any('index','IndexController@index');             //主页
+    });
+
+    //登陆 注册
+    Route::middleware([])->namespace('Index')->group(function(){   
+         Route::any('login','IndexController@login');                 //登录
+         Route::any('register_1','IndexController@registerV1');       //注册1
+         Route::any('register_2','IndexController@registerV2');       //注册2
+    });
+
+    //登陆
+    Route::middleware([])->namespace('Index')->group(function(){   
+        Route::any('userinfo','UserController@userinfo');   //个人资料
+        Route::any('password','UserController@password');   //修改密码
+        Route::any('email','UserController@email');         //修改邮箱
+    }); 
+}); 
+
 
 //登录页面
 Route::prefix('/index')->group(function(){
     route::any('login','Index\LoginController@login');//登录页面
+    route::any('loginDo','Index\LoginController@loginDo');//登录执行页面
+    route::any('loginout','Index\LoginController@loginout');//退出
+
     route::any('register','Index\LoginController@register');//注册页面
+    route::any('registerDo','Index\LoginController@registerDo');//注册执行页面
+    route::any('checkphone','Index\LoginController@checkphone');//检查手机号是否存在
+    route::any('send','Index\LoginController@send');//检查手机号是否存在
+
+
 });
 
 //前台首页
