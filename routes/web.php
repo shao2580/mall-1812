@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
+
 /*后台*/
 Route::prefix('/admin')->middleware([])->group(function(){
     Route::any('index','Admin\IndexController@index');		//首页
@@ -35,36 +35,7 @@ Route::prefix('/login')->group(function(){
     Route::any('loginout','Admin\LoginController@loginOut');   //退出登录
 });
 
-/*前台*/
-Route::prefix('index')->group(function(){    
-    //不用登陆
-    Route::namespace('Index')->group(function(){  
-        Route::any('index','IndexController@index');             //主页
-    });
 
-    //登陆 注册
-    Route::middleware([])->namespace('Index')->group(function(){   
-         Route::any('login','IndexController@login');                 //登录
-         Route::any('register_1','IndexController@registerV1');       //注册1
-         Route::any('register_2','IndexController@registerV2');       //注册2
-    });
-
-    //登陆
-    Route::middleware([])->namespace('Index')->group(function(){   
-        Route::any('userinfo','UserController@userinfo');   //个人资料
-        Route::any('password','UserController@password');   //修改密码
-        Route::any('email','UserController@email');         //修改邮箱
-    }); 
-}); 
-
-
-
-
-
-
-
-
-=======
 //登录页面
 Route::prefix('/index')->group(function(){
     route::any('login','Index\LoginController@login');//登录页面
@@ -83,12 +54,18 @@ Route::prefix('/index')->group(function(){
 
 //商品详情
 Route::prefix('/index')->group(function(){
-    route::any('goods','Index\GoodsController@goods');
+    route::any('goods/{goods_id}','Index\GoodsController@goods');
+    //添加购物车
+    route::post('addcart','Index\GoodsController@addcart');
 });
 
 //购物车页面
 Route::prefix('/index')->group(function(){
-    route::any('cart','Index\CartController@cart');
+    route::get('cart','Index\CartController@cart');
+    route::post('getSubTotal','Index\CartController@getSubTotal');//获取小计
+    route::post('changeBuyNumber','Index\CartController@changeBuyNumber');//更改购买数量
+    route::post('countTotal','Index\CartController@countTotal');//获取商品总价
+    route::post('cartDel','Index\CartController@cartDel');//删除购物车
 });
 
 //个人中心
@@ -96,4 +73,4 @@ Route::prefix('/index')->group(function(){
     route::any('center','Index\CenterController@center');//我的信息
     route::any('order','Index\CenterController@order');//我的订单
 });
->>>>>>> zt-dev
+
