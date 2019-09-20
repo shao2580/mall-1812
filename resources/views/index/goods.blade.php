@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
         <meta name="author" content="order by dede58.com"/>
 		<title>小米6立即购买-小米商城</title>
-		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="stylesheet" type="text/css" href="{{asset('index/css/style.css')}}">
 	</head>
 	<body>
 	<!-- start header -->
@@ -109,11 +109,12 @@
 	</div>
 	
 	<div class="jieshao mt20 w">
-		<div class="left fl"><img src="./image/liebiao_xiaomi6.jpg"></div>
+		<div class="left fl"><img src="/uploads/{{$data->goods_img}}" alt="" width="560"></div>
+		<input type="hidden" id="goods_id" value="{{$data->goods_id}}">
 		<div class="right fr">
-			<div class="h3 ml20 mt20">小米6</div>
-			<div class="jianjie mr40 ml20 mt10">变焦双摄，4 轴防抖 / 骁龙835 旗舰处理器，6GB 大内存，最大可选128GB 闪存 / 5.15" 护眼屏 / 四曲面玻璃/陶瓷机身</div>
-			<div class="jiage ml20 mt10">2499.00元</div>
+			<div class="h3 ml20 mt20">{{$data->goods_name}}</div>
+			<div class="jianjie mr40 ml20 mt10">{{$data->description}}</div>
+			<div class="jiage ml20 mt10">{{$data->shop_price}}元</div>
 			<div class="ft20 ml20 mt20">选择版本</div>
 			<div class="xzbb ml20 mt10">
 				<div class="banben fl">
@@ -149,14 +150,43 @@
 				<div class="bot mt20 ft20 ftbc">总计：2499元</div>
 			</div>
 			<div class="xiadan ml20 mt20">
-					<input class="jrgwc"  type="button" name="jrgwc" value="立即选购" />
-					<a href="{{url('/index/cart')}}"><input class="jrgwc" type="button" name="jrgwc" value="加入购物车" /></a>
-				
+				<input class="jrgwc"  type="button" name="jrgwc" value="立即选购" />
+				<input class="jrgwc sub" type="button" name="jrgwc" value="加入购物车" />
 			</div>
 		</div>
 		<div class="clear"></div>
 	</div>
 	</form>
+
+	<script src="{{asset('/js/jquery.min.js')}}"></script>
+	<script>
+		$(function(){
+			//点击加入购物车
+			$(document).on('click','.sub',function(){
+				var goods_id=$('#goods_id').val();
+				//alert(goods_id);
+				//把商品id 购买数量传给控制器
+
+				$.post(
+					"{{url('/index/addcart')}}",
+					{goods_id:goods_id},
+					function(res){
+						// console.log(res);
+						if(res.code==4000){
+							alert(res.message);
+							location.href='/index/cart';
+						}else{
+							alert(res.message);
+						}
+					},
+					'json'
+				);
+
+			});
+
+		})
+	</script>
+
 	<!-- footer -->
 	<footer class="mt20 center">
 			

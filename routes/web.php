@@ -36,7 +36,6 @@ Route::prefix('/login')->group(function(){
 });
 
 
-
 //登录页面
 Route::prefix('/index')->group(function(){
     route::any('login','Index\LoginController@login');//登录页面
@@ -55,12 +54,18 @@ Route::prefix('/index')->group(function(){
 
 //商品详情
 Route::prefix('/index')->group(function(){
-    route::any('goods','Index\GoodsController@goods');
+    route::any('goods/{goods_id}','Index\GoodsController@goods');
+    //添加购物车
+    route::post('addcart','Index\GoodsController@addcart');
 });
 
 //购物车页面
 Route::prefix('/index')->group(function(){
-    route::any('cart','Index\CartController@cart');
+    route::get('cart','Index\CartController@cart');
+    route::post('getSubTotal','Index\CartController@getSubTotal');//获取小计
+    route::post('changeBuyNumber','Index\CartController@changeBuyNumber');//更改购买数量
+    route::post('countTotal','Index\CartController@countTotal');//获取商品总价
+    route::post('cartDel','Index\CartController@cartDel');//删除购物车
 });
 
 //个人中心
