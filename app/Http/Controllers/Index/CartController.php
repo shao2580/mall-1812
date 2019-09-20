@@ -13,8 +13,8 @@ class CartController extends Controller
     public function cart()
     {
         //根据用户id查询商品id
-        //$u_id=session('u_id');
-        $u_id=7;
+        $u_id=session('u_id');
+        // $u_id=7;
         $where=[
             ['u_id','=',$u_id],
             ['is_del','=',1]
@@ -54,8 +54,8 @@ class CartController extends Controller
         // print_r($shop_price);die;
         //获取商品购买数量
         //根据用户id
-        //$u_id=session('u_id');
-        $u_id=7;
+        $u_id=session('u_id');
+        // $u_id=7;
         $cartWhere=[
             ['goods_id','=',$goods_id],
             ['u_id','=',$u_id]
@@ -81,8 +81,8 @@ class CartController extends Controller
         }
 
         //获取用户id
-        //$u_id=session('u_id');
-        $u_id=7;
+        $u_id=session('u_id');
+        // $u_id=7;
         $where=[
             'goods_id'=>$goods_id,
             'u_id'=>$u_id
@@ -106,8 +106,8 @@ class CartController extends Controller
         $goods_id=explode(',',$goods_id);
         // print_r($goods_id);exit;
         //获取用户id
-        //$u_id=session('u_id');
-        $u_id=7;
+        $u_id=session('u_id');
+        // $u_id=7;
         $where=[
             'u_id'=>$u_id
         ];
@@ -132,8 +132,8 @@ class CartController extends Controller
         $goods_id=request()->goods_id;
         // print_r($goods_id);die;
         //获取用户id
-        //$u_id=session('u_id');
-        $u_id=7;
+        $u_id=session('u_id');
+        // $u_id=7;
         $where=[
             ['u_id','=',$u_id],
             //单删、批删用in

@@ -17,12 +17,23 @@
 			<div class="wdgwc fl ml40">我的购物车</div>
 			<div class="wxts fl ml20">温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</div>
 			<div class="dlzc fr">
-				<ul>
-					<li><a href="./login.html" target="_blank">登录</a></li>
-					<li>|</li>
-					<li><a href="./register.html" target="_blank">注册</a></li>	
-				</ul>
-				
+				@if(session('u_id')==null)
+					<ul>
+						<li><a href="{{url('/index/login')}}" target="_blank">登录</a></li>
+						<li>|</li>
+						<li><a href="{{url('/index/register')}}" target="_blank" >注册</a></li>
+						
+					</ul>
+					@else
+					<ul>
+						 
+						<li><a href="{{url('/index/register')}}" target="_blank" >欢迎{{session('u_name')}}</a></li>
+						<li>|</li>
+						<li><a href="{{url('/index/center')}}">个人中心</a></li>
+						<li>|</li>
+						<li><a href="{{url('/index/loginout')}}">退出</a></li>
+					</ul>
+				@endif
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -40,35 +51,6 @@
 					<div class="sub_top fr">操作</div>
 					<div class="clear"></div>
 				</div>
-				<div class="content2 center">
-					<div class="sub_content fl ">
-						<input type="checkbox" value="quanxuan" class="quanxuan" />
-					</div>
-					<div class="sub_content fl"><img src="./image/gwc_xiaomi6.jpg"></div>
-					<div class="sub_content fl ft20">小米6全网通6GB内存+64GB 亮黑色</div>
-					<div class="sub_content fl ">2499元</div>
-					<div class="sub_content fl">
-						<input class="shuliang" type="number" value="1" step="1" min="1" >
-					</div>
-					<div class="sub_content fl">2499元</div>
-					<div class="sub_content fl"><a href="">×</a></div>
-					<div class="clear"></div>
-				</div>
-				<div class="content2 center">
-					<div class="sub_content fl ">
-						<input type="checkbox" value="quanxuan" class="quanxuan" />
-					</div>
-					<div class="sub_content fl"><img src="./image/gwc_xiaomi6.jpg"></div>
-					<div class="sub_content fl ft20">小米6全网通6GB内存+64GB 亮黑色</div>
-					<div class="sub_content fl ">2499元</div>
-					<div class="sub_content fl">
-						<input class="shuliang" type="number" value="1" step="1" min="1" >
-					</div>
-					<div class="sub_content fl">2499元</div>
-					<div class="sub_content fl"><a href="">×</a></div>
-					<div class="clear"></div>
-				</div>
-
 				@if($data)
 				@foreach($data as $v)
 				<div class="content2 center">

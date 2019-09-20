@@ -31,8 +31,8 @@ class GoodsController extends Controller
         $buy_number=1;
         //dd($goods_id);
         //根据用户id，商品id判断用户是否买过此商品
-        //$u_id=session('u_id');
-        $u_id=7;
+        $u_id=session('u_id');
+        // $u_id=7;
         //dd($uid);
         $where=[
             'u_id'=>$u_id,
