@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
+
 /*后台*/
 Route::prefix('/admin')->middleware([])->group(function(){
     Route::any('index','Admin\IndexController@index');		//首页
@@ -34,6 +34,9 @@ Route::prefix('/login')->group(function(){
     Route::any('logindo','Admin\LoginController@loginDo');     //执行登录
     Route::any('loginout','Admin\LoginController@loginOut');   //退出登录
 });
+
+
+
 
 /*前台*/
 Route::prefix('index')->group(function(){    
@@ -59,16 +62,18 @@ Route::prefix('index')->group(function(){
 
 
 
-
-
-
-
-
-=======
 //登录页面
 Route::prefix('/index')->group(function(){
     route::any('login','Index\LoginController@login');//登录页面
+    route::any('loginDo','Index\LoginController@loginDo');//登录执行页面
+    route::any('loginout','Index\LoginController@loginout');//退出
+
     route::any('register','Index\LoginController@register');//注册页面
+    route::any('registerDo','Index\LoginController@registerDo');//注册执行页面
+    route::any('checkphone','Index\LoginController@checkphone');//检查手机号是否存在
+    route::any('send','Index\LoginController@send');//检查手机号是否存在
+
+
 });
 
 //前台首页
@@ -96,4 +101,4 @@ Route::prefix('/index')->group(function(){
     route::any('center','Index\CenterController@center');//我的信息
     route::any('order','Index\CenterController@order');//我的订单
 });
->>>>>>> zt-dev
+

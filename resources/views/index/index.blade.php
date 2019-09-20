@@ -37,13 +37,23 @@
 				<div class="right fr">
 					<div class="gouwuche fr"><a href="{{url('index/cart')}}">购物车</a></div>
 					<div class="fr">
+						@if(session('u_id')==null)
 						<ul>
 							<li><a href="{{url('/index/login')}}" target="_blank">登录</a></li>
 							<li>|</li>
 							<li><a href="{{url('/index/register')}}" target="_blank" >注册</a></li>
+							
+						</ul>
+						@else
+						<ul>
+							 
+							<li><a href="{{url('/index/register')}}" target="_blank" >欢迎{{session('u_name')}}</a></li>
 							<li>|</li>
 							<li><a href="{{url('/index/center')}}">个人中心</a></li>
+							<li>|</li>
+							<li><a href="{{url('/index/loginout')}}">退出</a></li>
 						</ul>
+						@endif
 					</div>
 					<div class="clear"></div>
 				</div>
