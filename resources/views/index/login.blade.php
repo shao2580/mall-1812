@@ -42,7 +42,7 @@
 		</footer>
 	</body>
 </html>
-<script src="/js/jquery.min.js"></script>
+<script src="{{asset('/js/jquery.min.js')}}"></script>
 <script>
     $(function(){
         //点击获取

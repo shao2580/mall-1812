@@ -37,7 +37,7 @@
 		</form>
 	</body>
 </html>
-<script src="/js/jquery.min.js"></script>
+<script src="{{asset('/js/jquery.min.js')}}"></script>
 <script>
 $(function(){
 			//手机验证
