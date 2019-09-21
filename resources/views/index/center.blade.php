@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -101,7 +102,7 @@
 					<li><a href="./self_info.html" style="color:#ff6700;font-weight:bold;">我的个人中心</a></li>
 					<li><a href="">消息通知</a></li>
 					<li><a href="">优惠券</a></li>
-					<li><a href="">收货地址</a></li>
+					<li><a href="{{url('/index/site')}}">收货地址</a></li>
 				</ul>
 			</div>
 		</div>

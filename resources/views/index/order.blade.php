@@ -98,10 +98,10 @@
 			<div class="ddzx">个人中心</div>
 			<div class="subddzx">
 				<ul>
-					<li><a href="./self_info.html">我的个人中心</a></li>
+					<li><a href="{{url('/index/center')}}">我的个人中心</a></li>
 					<li><a href="">消息通知</a></li>
 					<li><a href="">优惠券</a></li>
-					<li><a href="">收货地址</a></li>
+					<li><a href="{{url('/index/site')}}">收货地址</a></li>
 				</ul>
 			</div>
 		</div>
