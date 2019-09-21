@@ -193,9 +193,14 @@
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a onclick="xadmin.add_tab('多级分类','cate.html')">
+                                <a onclick="xadmin.add_tab('分类添加','{{url('category/create')}}')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>多级分类</cite></a>
+                                    <cite>分类添加</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('分类列表','{{url('category/list')}}')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>分类列表</cite></a>
                             </li>
                         </ul>
                     </li>
