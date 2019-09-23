@@ -68,6 +68,7 @@ Route::prefix('/index')->group(function(){
 //前台首页
 Route::prefix('/index')->group(function(){
     route::any('index','Index\IndexController@index');
+    route::any('cate','Index\IndexController@cate'); 
 });
 
 //分类页面
