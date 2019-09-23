@@ -33,6 +33,13 @@ Route::prefix('/login')->group(function(){
     Route::any('logindo','Admin\LoginController@loginDo');     //执行登录
     Route::any('loginout','Admin\LoginController@loginOut');   //退出登录
 });
+//商品
+Route::prefix('/goods')->middleware([])->group(function(){
+    Route::any('list','Admin\GoodsController@list');     //商品列表
+    Route::any('add','Admin\GoodsController@add');     //商品添加
+    Route::any('doAdd','Admin\GoodsController@doAdd');     //执行添加
+    Route::any('upload','Admin\GoodsController@upload');     //执行添加
+});
 
 /*前台*/
 Route::prefix('index')->group(function(){    

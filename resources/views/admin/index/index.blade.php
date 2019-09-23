@@ -157,9 +157,14 @@
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a onclick="xadmin.add_tab('商品列表','order-list.html')">
+                                <a onclick="xadmin.add_tab('商品列表','{{url('goods/list')}}')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>商品列表</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('商品添加','{{url('goods/add')}}')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>商品添加</cite></a>
                             </li>
                             <li>
                                 <a onclick="xadmin.add_tab('订单列表1','order-list1.html')">
