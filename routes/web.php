@@ -28,11 +28,13 @@ Route::prefix('/vip')->middleware([])->group(function(){
     Route::any('vlist','Admin\UserController@vlist');     //会员列表
 });
 
+//后台登录
 Route::prefix('/login')->group(function(){
     Route::any('login','Admin\LoginController@login');         //登录
-    Route::any('logindo','Admin\LoginController@loginDo');     //执行登录
-    Route::any('loginout','Admin\LoginController@loginOut');   //退出登录
+    // Route::any('logindo','Admin\LoginController@loginDo');     //执行登录
+    // Route::any('loginout','Admin\LoginController@loginOut');   //退出登录
 });
+
 //商品
 Route::prefix('/goods')->middleware([])->group(function(){
     Route::any('list','Admin\GoodsController@list');     //商品列表
@@ -68,11 +70,12 @@ Route::prefix('/index')->group(function(){
 //前台首页
 Route::prefix('/index')->group(function(){
     route::any('index','Index\IndexController@index');
+    route::any('top','Index\IndexController@top');
 });
 
 //分类页面
 Route::prefix('/index')->group(function(){
-    route::any('classify','Index\ClassifyController@classify');
+    route::any('classify/{cate_id}','Index\ClassifyController@classify');
 });
 
 //商品详情
