@@ -16,6 +16,4 @@ class IndexController extends Controller
         $res =Category::where(['is_nav_show'=>1])->get();
         return view('index.index',compact('data','res'));
     }
-
-  
 }
