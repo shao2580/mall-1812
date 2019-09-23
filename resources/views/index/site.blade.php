@@ -208,6 +208,12 @@
 				'json',
 				function(res){
 					console.log(res);
+					if (res.code == 200) {
+						alert(res.msg);
+						location.href ='./site';
+					}else{
+						alert(res.msg);
+					}
 				} 
 			);
 

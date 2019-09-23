@@ -39,7 +39,7 @@ Route::prefix('/login')->group(function(){
 Route::prefix('/category')->group(function(){
     Route::any('create','Admin\CategoryController@create');//分类添加页面
     Route::any('save','Admin\CategoryController@save');     //添加处理页面
-    Route::any('list','Admin\CategoryController@list');     //列表咋还是女孩页面
+    Route::any('list','Admin\CategoryController@list');     //列表展示页面
     // Route::any('loginout','Admin\LoginController@loginOut');   //退出登录
 });
 

@@ -66,7 +66,7 @@ class LoginController extends Controller
         // $u_pwd = request()->u_pwd;
         // $u_phone = request()->u_phone;
         $data=request()->all();
-         $code=$data['code'];
+        $code=$data['code'];
         $time = time();
         $u_pwd = md5($data['u_pwd']);
          if(empty($data['u_name']) || empty($data['u_pwd']) || empty($data['u_phone']) || empty($data['code'])){

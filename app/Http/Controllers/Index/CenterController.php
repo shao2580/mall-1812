@@ -44,8 +44,23 @@ public function siteSave()
 public function create()
 {
     $data =request()->input();
-    $res =OrderAddress::create($data);
-    dd($res);
+    $u_id =session('u_id');
+    $model =new OrderAddress;
+    $model->address_name =$data['address_name'];
+    $model->address_tel =$data['address_tel'];
+    $model->address_mail =$data['address_mail'];
+    $model->province =$data['province'];
+    $model->city =$data['city'];
+    $model->area =$data['area'];
+    $model->address_detail =$data['address_detail'];
+    $model->user_id =$u_id;
+    $model->create_time =time();
+    $res =$model->save();
+    if ($res) {
+        return \json_encode(['code'=>200,'msg'=>'添加成功']);
+    }else{
+        return json_encode(['code'=>200,'msg'=>'添加失败']);
+    }
     
 }
 

@@ -23,6 +23,7 @@ class IndexController extends Controller
     {
     	return view('admin.admin.list');
     }
+    
     public function add()
     {
     	return view('admin.admin.add');
