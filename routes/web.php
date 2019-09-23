@@ -31,15 +31,15 @@ Route::prefix('/vip')->middleware([])->group(function(){
 
 //后台登录
 Route::prefix('/login')->group(function(){
-<<<<<<< HEAD
+
     Route::get('login','Admin\LoginController@login');         //登录
     Route::any('logindo','Admin\LoginController@loginDo');     //执行登录
     Route::post('loginout','Admin\LoginController@loginOut');   //退出登录
-=======
+
     Route::any('login','Admin\LoginController@login');         //登录
     // Route::any('logindo','Admin\LoginController@loginDo');     //执行登录
     // Route::any('loginout','Admin\LoginController@loginOut');   //退出登录
->>>>>>> zt-dev
+
 });
 
 //商品
@@ -84,20 +84,20 @@ Route::prefix('/index')->group(function(){
     route::post('checkphone','Index\LoginController@checkphone');//检查手机号是否存在
     route::any('send','Index\LoginController@send');//发送验证码
     route::any('index','Index\IndexController@index');
-<<<<<<< HEAD
+
     route::any('cate','Index\IndexController@cate'); 
-=======
+
     route::any('top','Index\IndexController@top');
->>>>>>> zt-dev
+
 });
 
 //分类页面
 Route::prefix('/index')->group(function(){
-<<<<<<< HEAD
+
     route::get('classify','Index\ClassifyController@classify');
-=======
+
     route::any('classify/{cate_id}','Index\ClassifyController@classify');
->>>>>>> zt-dev
+
 });
 
 //商品详情
