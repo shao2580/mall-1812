@@ -10,4 +10,6 @@ class Cart extends Model
     protected $pk = 'cart_id';
     public $timestamps = false;
     protected $guarded = [];
+    protected $primaryKey = 'cart_id';
+    const CREATED_AT = 'create_time';
 }
