@@ -29,4 +29,11 @@ class Category extends Model
         }
         return $arr;
     }
+    /**
+     * 关联插查询
+     */
+    public function son()
+    {
+        return $this->hasMany($this,'parent_id','cate_id');
+    }
 }

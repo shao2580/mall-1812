@@ -76,6 +76,8 @@ Route::prefix('/index')->group(function(){
     route::post('registerDo','Index\LoginController@registerDo');//注册执行页面
     route::post('checkphone','Index\LoginController@checkphone');//检查手机号是否存在
     route::any('send','Index\LoginController@send');//发送验证码
+    route::any('index','Index\IndexController@index');
+    route::any('cate','Index\IndexController@cate'); 
 });
 
 //分类页面
