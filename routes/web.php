@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
+ 
 /*后台*/
 Route::prefix('/admin')->middleware([])->group(function(){
     Route::any('index','Admin\IndexController@index');		//首页
@@ -57,15 +57,7 @@ Route::prefix('index')->group(function(){
     }); 
 }); 
 
-
-
-
-
-
-
-
-=======
-//登录页面
+ //登录页面
 Route::prefix('/index')->group(function(){
     route::any('login','Index\LoginController@login');//登录页面
     route::any('register','Index\LoginController@register');//注册页面
@@ -96,8 +88,7 @@ Route::prefix('/index')->group(function(){
     route::any('center','Index\CenterController@center');//我的信息
     route::any('order','Index\CenterController@order');//我的订单
 });
-<<<<<<< HEAD
-
+ 
 
 #专栏管理
 Route::prefix('/fenlan')->group(function(){
@@ -108,7 +99,3 @@ Route::prefix('/fenlan')->group(function(){
     Route::any('update','FenlanController@update');//修改
     Route::any('doupdate','FenlanController@doupdate');//执行修改
 });
-
-=======
->>>>>>> zt-dev
->>>>>>> bcca214ef11ab59a43e502d9a2ceca4bd7fd6320

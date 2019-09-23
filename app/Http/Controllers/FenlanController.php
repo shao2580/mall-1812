@@ -16,7 +16,7 @@ class FenlanController extends Controller
 //        echo 1;die;
         $info=DB::table('lan')->get()->toArray();
 //        dd($info);
-        return view('/fenlan/add',['info'=>$info]);
+        return view('admin/fenlan/add',['info'=>$info]);
     }
 
     /**
@@ -65,7 +65,7 @@ class FenlanController extends Controller
             ->paginate(5);
 //            ->toArray();
         //dd($res);
-        return view('/fenlan/lists',compact('res','s'));
+        return view('admin/fenlan/lists',compact('res','s'));
     }
 
     /**
@@ -99,7 +99,7 @@ class FenlanController extends Controller
             ->where('fenlan.s_id',$id)
             ->first();
         //dd($res);
-        return view('/fenlan/update',['info'=>$info,'res'=>$res]);
+        return view('admin/fenlan/update',['info'=>$info,'res'=>$res]);
 
     }
 

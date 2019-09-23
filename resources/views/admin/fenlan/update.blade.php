@@ -1,15 +1,4 @@
-@extends('layouts.shop')
-@section('content')
-    <div class="wrapper">
-        <!--左侧导航开始-->
-        @include('layouts.left')
-
-
-                <!-- 右侧主体开始 -->
-        <div class="page-content">
-            <div class="content">
-                <!-- 右侧内容框架，更改从这里开始 -->
-    <div class="panel admin-panel">
+<div class="panel admin-panel">
         <input type="hidden" id="s_id" name="s_id" value="{{$res->s_id}}">
         <div class="body-content">
             <div  class="form-x">
@@ -76,7 +65,7 @@
         // 或者 var editor = new E( document.getElementById('editor') )
         editor.create()
     </script>
-
+	<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script>
         $(function(){
             $("#btn").click(function(){
@@ -95,12 +84,11 @@
                         //console.log(res);
                         if(res.code==1){
                             alert(res.msg);
-                            location.href="/fenlan/lists";
+                            location.href="admin/fenlan/lists";
                         }
                     },'json'
                 );
             })
         })
     </script>
-@endsection
 
