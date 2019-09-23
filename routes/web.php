@@ -15,10 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-=======
  
->>>>>>> yyk-dev
 /*后台*/
 Route::prefix('/admin')->middleware([])->group(function(){
     Route::any('index','Admin\IndexController@index');		//首页
@@ -45,7 +42,7 @@ Route::prefix('/goods')->middleware([])->group(function(){
     Route::any('upload','Admin\GoodsController@upload');     //执行添加
 });
 
-<<<<<<< HEAD
+
 //分类管理
 Route::prefix('/category')->group(function(){
     Route::any('create','Admin\CategoryController@create');//分类添加页面
@@ -54,10 +51,6 @@ Route::prefix('/category')->group(function(){
     // Route::any('loginout','Admin\LoginController@loginOut');   //退出登录
 });
 
-
-//前台
-//登录页面
-=======
 /*前台*/
 Route::prefix('index')->group(function(){    
     //不用登陆
@@ -81,7 +74,6 @@ Route::prefix('index')->group(function(){
 }); 
 
  //登录页面
->>>>>>> yyk-dev
 Route::prefix('/index')->group(function(){
     route::any('login','Index\LoginController@login');//登录页面
     route::any('loginDo','Index\LoginController@loginDo');//登录执行页面
