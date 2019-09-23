@@ -6,8 +6,6 @@
 .vscode
 .env.backup
 .env
-.idea
-.vscode
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

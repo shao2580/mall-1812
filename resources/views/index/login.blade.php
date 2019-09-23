@@ -11,30 +11,26 @@
 		<!-- login -->
 		<div class="top center">
 			<div class="logo center">
-				<a href="./index.html" target="_blank"><img src="./image/mistore_logo.png" alt=""></a>
+				<a href="./index" target="_blank"><img src="./image/mistore_logo.png" alt=""></a>
 			</div>
 		</div>
-		<form  method="post" action="./login.php" class="form center">
+		<form  method="" action="" class="form center"> 
 		<div class="login">
 			<div class="login_center">
 				<div class="login_top">
 					<div class="left fl">会员登录</div>
-					<div class="right fr">您还不是我们的会员？<a href="./register.html" target="_self">立即注册</a></div>
+					<div class="right fr">您还不是我们的会员？<a href="./register" target="_self">立即注册</a></div>
 					<div class="clear"></div>
 					<div class="xian center"></div>
 				</div>
 				<div class="login_main center">
-					<div class="username">用户名:&nbsp;<input class="shurukuang" type="text" name="username" placeholder="请输入你的用户名"/></div>
-					<div class="username">密&nbsp;&nbsp;&nbsp;&nbsp;码:&nbsp;<input class="shurukuang" type="password" name="password" placeholder="请输入你的密码"/></div>
-					<div class="username">
-						<div class="left fl">验证码:&nbsp;<input class="yanzhengma" type="text" name="username" placeholder="请输入验证码"/></div>
-						<div class="right fl"><img src="./image/yanzhengma.jpg"></div>
-						<div class="clear"></div>
-					</div>
+					<div class="username">用户名:&nbsp;<input class="shurukuang" type="text" id="u_name" placeholder="请输入你的用户名"/></div>
+					<div class="username">密&nbsp;&nbsp;&nbsp;&nbsp;码:&nbsp;<input class="shurukuang" type="password" id="u_pwd" placeholder="请输入你的密码"/></div>
+					 
 				</div>
-				<div class="login_submit">
-					<input class="submit" type="submit" name="submit" value="立即登录" >
-				</div>
+				 
+					<button class="submit">登录</button>
+				 
 				
 			</div>
 		</div>
@@ -46,3 +42,39 @@
 		</footer>
 	</body>
 </html>
+<script src="{{asset('/js/jquery.min.js')}}"></script>
+<script>
+    $(function(){
+        //点击获取
+        $(".submit").click(function(){
+            //获取用户名
+            var u_name=$("#u_name").val();
+            var u_pwd=$('#u_pwd').val();
+            //验证
+            if(u_name==''){
+                alert('账号必填');
+                return false;
+            }
+            if(u_pwd==''){ 
+                alert('密码必填');
+                return false;
+            }
+            $.post( 
+                "{{url('/index/loginDo')}}", 
+                {u_name:u_name,u_pwd:u_pwd},
+                function(res){
+                    console.log(res);
+                    if(res.code==1){
+                        alert(res.count);
+                        location.href="{{url('/index/index')}}"
+                    }else{
+                        alert(res.count); 
+                        return false;
+                    }
+                  },
+                 'json'
+           );
+             return false;
+        })
+    });
+</script>
