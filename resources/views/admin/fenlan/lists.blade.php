@@ -1,16 +1,6 @@
-@extends('layouts.shop')
-@section('content')
-    <div class="wrapper">
-        <!--左侧导航开始-->
-        @include('layouts.left')
-
-
-                <!-- 右侧主体开始 -->
-        <div class="page-content">
-            <div class="content">
-                <!-- 右侧内容框架，更改从这里开始 -->
-
-<form action="">
+ 
+  <form action="">
+    <h1>品牌列表</h1>>
     <input type="text" class="input w50" name="s"  placeholder="输入名称进行搜索" value="{{$s}}"/>
     <input type="submit" class="button bg-main icon-check-square-o" value="搜索">
 </form>
@@ -48,6 +38,7 @@
         </td>
         <td><a href="javascript:;" class="del" s_id='{{$v->s_id}}'>删除</a>||<a href="/fenlan/update?id={{$v->s_id}}">修改</a></td>
     </tr>
+    <link rel="stylesheet" href="{{asset('css/page.css')}}">
     </tbody>
     @endforeach
 
@@ -59,7 +50,7 @@
 
 </table>
 
-<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script>
   $(function(){
       $(".del").click(function(){
@@ -74,7 +65,7 @@
                   if(res.code==1 ){
                       var f=confirm("确定要删除吗？");
                       if(f == true){
-                          location.href='/fenlan/lists';
+                          location.href='admin/fenlan/lists';
                       }
                   }else{
                       alert(res.msg);
@@ -84,4 +75,3 @@
       })
   })
 </script>
-@endsection

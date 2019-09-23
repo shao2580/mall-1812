@@ -1,14 +1,4 @@
-@extends('layouts.shop')
-@section('content')
-    <div class="wrapper">
-        <!--左侧导航开始-->
-        @include('layouts.left')
-                <!-- 右侧主体开始 -->
-        <div class="page-content">
-            <div class="content">
-                <!-- 右侧内容框架，更改从这里开始 -->
-
-                <h1 align="center">添加品牌</h1>
+               <h1 align="center">添加品牌</h1>
                 <div class="panel admin-panel">
         <div class="body-content">
             <div  class="form-x">
@@ -37,7 +27,7 @@
                 </div>
 
                 <div class="desc">
-                    <label>描述：</label>
+                    <label>品牌描述：</label>
                     <div id="editor">
                     </div>
                 </div>
@@ -75,7 +65,7 @@
         // 或者 var editor = new E( document.getElementById('editor') )
         editor.create()
     </script>
-<script src="/js/juquey-3.2.1.mis.js"></script>
+    <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script>
         $(function(){
             $("#btn").click(function(){
@@ -93,11 +83,10 @@
                         //console.log(res);return ;
                         if(res.code==1){
                             alert(res.msg);
-                            location.href="/fenlan/lists";
+                            location.href="admin/fenlan/lists";
                         }
                     },'json'
                 );
             })
         })
     </script>
-@endsection

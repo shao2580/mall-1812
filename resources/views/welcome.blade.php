@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> bcca214ef11ab59a43e502d9a2ceca4bd7fd6320
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -84,11 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-<<<<<<< HEAD
                     Laravel今天好开心
-=======
-                    Laravel
->>>>>>> bcca214ef11ab59a43e502d9a2ceca4bd7fd6320
                 </div>
 
                 <div class="links">

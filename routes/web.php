@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> yyk-dev
 /*后台*/
 Route::prefix('/admin')->middleware([])->group(function(){
     Route::any('index','Admin\IndexController@index');		//首页
@@ -41,6 +45,7 @@ Route::prefix('/goods')->middleware([])->group(function(){
     Route::any('upload','Admin\GoodsController@upload');     //执行添加
 });
 
+<<<<<<< HEAD
 //分类管理
 Route::prefix('/category')->group(function(){
     Route::any('create','Admin\CategoryController@create');//分类添加页面
@@ -52,6 +57,31 @@ Route::prefix('/category')->group(function(){
 
 //前台
 //登录页面
+=======
+/*前台*/
+Route::prefix('index')->group(function(){    
+    //不用登陆
+    Route::namespace('Index')->group(function(){  
+        Route::any('index','IndexController@index');             //主页
+    });
+
+    //登陆 注册
+    Route::middleware([])->namespace('Index')->group(function(){   
+         Route::any('login','IndexController@login');                 //登录
+         Route::any('register_1','IndexController@registerV1');       //注册1
+         Route::any('register_2','IndexController@registerV2');       //注册2
+    });
+
+    //登陆
+    Route::middleware([])->namespace('Index')->group(function(){   
+        Route::any('userinfo','UserController@userinfo');   //个人资料
+        Route::any('password','UserController@password');   //修改密码
+        Route::any('email','UserController@email');         //修改邮箱
+    }); 
+}); 
+
+ //登录页面
+>>>>>>> yyk-dev
 Route::prefix('/index')->group(function(){
     route::any('login','Index\LoginController@login');//登录页面
     route::any('loginDo','Index\LoginController@loginDo');//登录执行页面
@@ -100,6 +130,7 @@ Route::prefix('/index')->group(function(){
     route::any('create','Index\CenterController@create');//我的地址 添加处理页面
 });
 
+
 #专栏管理
 Route::prefix('/fenlan')->group(function(){
     Route::get('add','FenlanController@add');//添加视图
@@ -109,3 +140,4 @@ Route::prefix('/fenlan')->group(function(){
     Route::any('update','FenlanController@update');//修改
     Route::any('doupdate','FenlanController@doupdate');//执行修改
 });
+
