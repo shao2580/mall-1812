@@ -1,6 +1,6 @@
 @extends('public.admin')
 @section('content')
-<form class="layui-form" action="{{url('admin/category/save')}}" method="GET">
+<form class="layui-form" action="{{url('category/save')}}" method="GET">
   <div class="layui-form-item">
     <label class="layui-form-label">分类名称</label>
     <div class="layui-input-inline">
